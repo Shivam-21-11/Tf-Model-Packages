@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="cv-playground",
-    version="0.0.2",
+    version="0.0.3",
     description="Various Deep Learning Models (tensorflow)",
     long_description=readme(),
     long_description_content_type="text/markdown",

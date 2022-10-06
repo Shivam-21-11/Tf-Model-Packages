@@ -3,6 +3,12 @@ import tensorflow_addons as tfa
 from Helper.helperfn import save_models , update_image_pool , generate_fake_samples,generate_real_samples,summarize_performance
 
 def resnet(n_filter, input_layer):
+    '''
+    Residual network
+    :param n_filter: number of convolutional filters to use.
+    :param input_layer: Input layer for this residual layer.
+
+    '''
     init = tf.keras.initializers.RandomNormal(stddev=0.02)
 
     d = tf.keras.layers.Conv2D(n_filter, (3, 3), padding='same', kernel_initializer=init)(input_layer)
@@ -17,6 +23,12 @@ def resnet(n_filter, input_layer):
 
 
 def build_generator(image_shape, n_resnet=9):
+    '''
+    Builds the Generator for image-to-image translation
+    :param image_shape: Shape of the image.
+    :param n_resnet: number of resnet layers to use.
+    :return: Generator model.
+    '''
     init = tf.keras.initializers.RandomNormal(stddev=0.02)
     ini = tf.keras.layers.Input(shape=image_shape)
 
@@ -51,6 +63,11 @@ def build_generator(image_shape, n_resnet=9):
 
 
 def build_descriminator(image_shape):
+    '''
+    Builds Desciminator model. (patch gan)
+    :param image_shape: Image Shape
+    :return: Descriminator model
+    '''
     # weight initializer
     init = tf.keras.initializers.RandomNormal(stddev=0.02)
 
@@ -89,6 +106,14 @@ def build_descriminator(image_shape):
 
 
 def composite_model(g_model_1, d_model, g_model_2, image_shape):
+    '''
+    Build the composite model to train each generator stepwise.
+    :param g_model_1: Generator model
+    :param d_model: Descriminator model for g_model_1
+    :param g_model_2: Generator model
+    :param image_shape: Image Shape
+    :return: Composite model
+    '''
     g_model_1.trainable = True
     d_model.trainable = False
     g_model_2.trainable = False
@@ -113,6 +138,18 @@ def composite_model(g_model_1, d_model, g_model_2, image_shape):
     return model
 
 def train_model(d_model_photo,d_model_monet,g_model_ph_mo,g_model_mo_ph,c_model_ph_mo,c_model_mo_ph,dataset,epochs=5):
+    '''
+    Function Used to train model
+    :param d_model_photo: Descriminator for Domain A
+    :param d_model_monet: Descriminator for Domain B
+    :param g_model_ph_mo: Generator for Domain A (A -> B)
+    :param g_model_mo_ph: Generator for Domain B (B -> A)
+    :param c_model_ph_mo: Composite Model for Domain A
+    :param c_model_mo_ph: Composite Model for Domain B
+    :param dataset: tuple of input image and target image
+    :param epochs: number of epochs to train.
+
+    '''
     n_epoch, n_batch = epochs, 1
     # determine the patch shape of the discriminator
     patch = d_model_photo.output_shape[1]
