@@ -7,7 +7,7 @@ def readme():
 
 
 setup(
-    name="tfcv",
+    name="cvm",
     version="0.0.1",
     description="Various Deep Learning Models (tensorflow)",
     long_description=readme(),
