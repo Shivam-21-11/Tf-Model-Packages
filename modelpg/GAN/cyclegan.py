@@ -184,8 +184,7 @@ def train_model(d_model_photo,d_model_monet,g_model_ph_mo,g_model_mo_ph,c_model_
         d_mo_loss_1 = d_model_monet.train_on_batch([x_realB, x_realA], y_realB)
         d_mo_loss_2 = d_model_monet.train_on_batch([x_realB, x_fakeA], y_fakeB)
 
-        print(
-            f"Iteration ==========>{i + 1} \n dA [{d_ph_loss_1}, {d_ph_loss_2}]   dB [{d_mo_loss_1}, {d_mo_loss_2}] \n gA [{g_loss_1}]  gB[{g_loss_2}]")
+        print(f"Iteration ======>{i + 1} \n dA [{d_ph_loss_1}, {d_ph_loss_2}]   dB [{d_mo_loss_1}, {d_mo_loss_2}] \n gA [{g_loss_1}]  gB[{g_loss_2}]")
 
         # summarize performance
         if (i + 1) % (batch_per_epoch * 1) == 0:
