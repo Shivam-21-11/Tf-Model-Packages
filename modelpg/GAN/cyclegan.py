@@ -1,6 +1,6 @@
 import tensorflow as tf
 import tensorflow_addons as tfa
-from Helper.helperfn import save_models , update_image_pool , generate_fake_samples,generate_real_samples,summarize_performance
+from modelpg.Helper import save_models , update_image_pool , generate_fake_samples,generate_real_samples,summarize_performance
 
 def resnet(n_filter, input_layer):
     '''
