@@ -1,7 +1,7 @@
 # Tensorflow Model Playground
 
 - Different tensorflow Deep Learning model & Helper Function.
-- Currently Included Generative Adversarial Networks and som ehelper function.
+- Currently Included Generative Adversarial Networks and some helper function.
 
 ## Package File Structure
 [![fs](https://ik.imagekit.io/43bd8tl1l5kl/tf-ml-pg/fs_5lnQW6vq7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665724957691 "fs")](https://ik.imagekit.io/43bd8tl1l5kl/tf-ml-pg/fs_5lnQW6vq7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665724957691 "fs")
