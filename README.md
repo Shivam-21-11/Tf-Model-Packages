@@ -1,7 +1,7 @@
 # Tensorflow Model Playground
 
 - Different tensorflow Deep Learning model & Helper Function.
-- Currently Included Generative Adversarial Networks and som ehelper function.
+- Currently Included Generative Adversarial Networks and some helper function.
 
 ## Usage Example
 ### Generative Adversarial Networks
@@ -22,6 +22,7 @@ train_model(descriminator_1,descriminator_2,generator_1,generator_2,composite_1,
 ```
 
 - After training use each generator to generate images.
+<<<<<<< HEAD
 
 ### Transformer
 ```python
@@ -40,3 +41,5 @@ tf = Transformer(num_layers=num_layers,
                 dropout=dropout_rate)
 
 ```
+=======
+>>>>>>> 1432d74fdb7601b4093d8f84468235a4c97eea03
