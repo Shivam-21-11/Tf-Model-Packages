@@ -22,7 +22,7 @@ train_model(descriminator_1,descriminator_2,generator_1,generator_2,composite_1,
 ```
 
 - After training use each generator to generate images.
-<<<<<<< HEAD
+
 
 ### Transformer
 ```python
@@ -39,7 +39,6 @@ tf = Transformer(num_layers=num_layers,
                 inpt_vocab_size=2000,
                 tar_vocab_size=2000,
                 dropout=dropout_rate)
-
 ```
-=======
->>>>>>> 1432d74fdb7601b4093d8f84468235a4c97eea03
+Train this transformer using custom training loop or by `.fit()` method.
+**Note : `.fit` would take ((query , key),value) as parameter here X = (query,key) & Y = (value).**
