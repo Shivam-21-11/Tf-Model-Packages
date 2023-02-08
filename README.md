@@ -1,7 +1,7 @@
 # Tensorflow Model Playground
 
 - Different tensorflow Deep Learning model & Helper Function.
-- Currently Included Generative Adversarial Networks and some helper function.
+- Currently Included Generative Adversarial Networks , some helper function and Transformer.
 
 ## Usage Example
 ### Generative Adversarial Networks
