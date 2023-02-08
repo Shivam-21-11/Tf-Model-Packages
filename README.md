@@ -3,9 +3,6 @@
 - Different tensorflow Deep Learning model & Helper Function.
 - Currently Included Generative Adversarial Networks and som ehelper function.
 
-## Package File Structure
-[![fs](https://ik.imagekit.io/43bd8tl1l5kl/tf-ml-pg/fs_5lnQW6vq7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665724957691 "fs")](https://ik.imagekit.io/43bd8tl1l5kl/tf-ml-pg/fs_5lnQW6vq7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665724957691 "fs")
-
 ## Usage Example
 ### Generative Adversarial Networks
 * Simple CycleGAN
@@ -25,3 +22,21 @@ train_model(descriminator_1,descriminator_2,generator_1,generator_2,composite_1,
 ```
 
 - After training use each generator to generate images.
+
+### Transformer
+```python
+from modelpg.Transformer import Transformer
+num_layers = 4
+d_model = 512
+dff = 4
+num_heads = 8
+dropout_rate = 0.5
+tf = Transformer(num_layers=num_layers,
+                num_heads=num_heads,
+                d_model = d_model,
+                forward_expansion=dff,
+                inpt_vocab_size=2000,
+                tar_vocab_size=2000,
+                dropout=dropout_rate)
+
+```
