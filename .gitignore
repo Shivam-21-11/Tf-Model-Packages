@@ -1,5 +1,5 @@
 /.idea
 /build
 /dist
-/cv_playground.egg-info
+/TensorPG.egg-info
 setup.py
